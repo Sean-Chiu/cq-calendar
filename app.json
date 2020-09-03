@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "日历组件演示"
+  },
+
+  "sitemapLocation": "sitemap.json"
+}

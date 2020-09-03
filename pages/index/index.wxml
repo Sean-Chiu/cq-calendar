@@ -1,0 +1,42 @@
+<!--
+参数：
+year：默认年份
+month:默认月份
+day:默认日期
+header:是否显示主标题
+weeks:是否显示周标题
+week-title-type:周标题类型
+show-more-days:是否显示上下月的日期
+picker:是否启用日期变化
+today:是否启用今日按钮
+actives:[激活的日期]
+
+更多事件函数请参考JS页代码文档
+-->
+<div class="plugin">
+<calendar 
+    year="{{year}}"
+    month="{{month}}" 
+    day="{{day}}" 
+
+    header="{{header}}" 
+    next="{{next}}" 
+    prev="{{prev}}" 
+    addon="mixed"
+    days-addon="{{days_addon}}"
+    
+    weeks="{{week_title}}"
+    weeks-type="{{title_type}}" 
+    show-more-days="{{more}}" 
+    lunar="{{lunar}}"
+    cell-size="{{cs}}"    
+    
+    days-color="{{style}}"
+    active-type="{{activeType}}"
+    next-month='hi'
+    
+    bindnextMonth='nextMonth'                
+    bindprevMonth='prevMonth'
+    binddateChange='dateChange'
+    binddayClick='dayClick' />
+</div>
