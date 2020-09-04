@@ -516,7 +516,7 @@ Component({
                     for (let i = 1; i <= count; i++) {
                         days[index + i - 1].day = i;
                         days[index+i-1].date = `${days[index+i-1].date}-${i<10?`0${i}`:i}`
-                        console.log(days[index+i-1].date);
+                        // console.log(days[index+i-1].date);
                     }
                 }
 
@@ -527,7 +527,7 @@ Component({
                     for (let i = 0; i <= index; i++) {
                         days[i].day = last_month_day - index + i;
                         days[i].date = `${days[index+i-1].date}-${days[i].day<10?`0${days[i].day}`:days[i].day}`
-                        console.log(days[i].date);
+                        // console.log(days[i].date);
                     }
                 }                
             }
@@ -702,7 +702,8 @@ Component({
         /**
          * 点击具体日期
          */
-        dayClick: function (event) {                
+        dayClick: function (event) {    
+            // console.log(event);            
             const click_day = event.currentTarget.dataset.day;
             const eventDetail = {                
                 year: click_day.year,
@@ -711,7 +712,10 @@ Component({
                 color: click_day.color,
                 lunarMonth: click_day.lunarMonth,
                 lunarDay: click_day.lunarDay,
-                background: click_day.background
+                background: click_day.background,
+                offsetLeft:event.currentTarget.offsetLeft,
+                offsetTop:event.currentTarget.offsetTop,
+
             };
             this.triggerEvent('dayClick', eventDetail);
         }

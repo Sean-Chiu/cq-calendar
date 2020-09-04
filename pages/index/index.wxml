@@ -13,30 +13,11 @@ actives:[激活的日期]
 
 更多事件函数请参考JS页代码文档
 -->
-<div class="plugin">
-<calendar 
-    year="{{year}}"
-    month="{{month}}" 
-    day="{{day}}" 
+<view class="plugin">
+	<calendar year="{{year}}" month="{{month}}" day="{{day}}" header="{{header}}" next="{{next}}" prev="{{prev}}" addon="mixed" days-addon="{{days_addon}}" weeks="{{week_title}}" weeks-type="{{title_type}}" show-more-days="{{more}}" lunar="{{lunar}}" cell-size="{{cs}}" days-color="{{style}}" active-type="{{activeType}}" next-month='hi' bindnextMonth='nextMonth' bindprevMonth='prevMonth' binddateChange='dateChange' binddayClick='dayClick' />
 
-    header="{{header}}" 
-    next="{{next}}" 
-    prev="{{prev}}" 
-    addon="mixed"
-    days-addon="{{days_addon}}"
-    
-    weeks="{{week_title}}"
-    weeks-type="{{title_type}}" 
-    show-more-days="{{more}}" 
-    lunar="{{lunar}}"
-    cell-size="{{cs}}"    
-    
-    days-color="{{style}}"
-    active-type="{{activeType}}"
-    next-month='hi'
-    
-    bindnextMonth='nextMonth'                
-    bindprevMonth='prevMonth'
-    binddateChange='dateChange'
-    binddayClick='dayClick' />
-</div>
+	<view class="button" style="{{buttonStyle}}" wx:if="{{showAction}}" bindtap="closeAction">
+    <image style="width:15px;height:15px" src="../image/canlender_close.png"></image>
+    </view>
+	<view class="actionView" style="{{showViewStyle}}" wx:if="{{showAction}}">为所欲为</view>
+</view>

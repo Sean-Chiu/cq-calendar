@@ -33,31 +33,31 @@
 						<view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px; border-radius: 6px;" wx:else bindtap="dayClick" data-day="{{day}}">
 							<!-- 上月  -->
 							<block wx:if="{{day.info == 'prev'}}">
-							   <view class="today" style="background: {{day.selectedColor}}"> 
-                                     <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-								    <text class="calendar-lunar-lunar" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
-                                </view>
-        
+								<view class="today" style="background: {{day.selectedColor}}">
+									<text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+									<text class="calendar-lunar-lunar" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+								</view>
+
 								<text class="calendar-lunar-other" style="color:{{day.otherColor}};">{{day.other}}</text>
 								<view class="badge" wx:if="{{day.badgeColor}}" style="background:{{day.badgeColor}};"></view>
 							</block>
 							<!-- 下月  -->
 							<block wx:elif="{{day.info == 'next'}}">
-								   <view class="today" style="background: {{day.selectedColor}}"> 
-                                     <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-								    <text class="calendar-lunar-lunar" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
-                                </view>
-                                
+								<view class="today" style="background: {{day.selectedColor}}">
+									<text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+									<text class="calendar-lunar-lunar" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+								</view>
+
 								<text class="calendar-lunar-other" style="color:{{day.otherColor}};">{{day.other}}</text>
 								<view class="badge" wx:if="{{day.badgeColor}}" style="background:{{day.badgeColor}};"></view>
 							</block>
 							<!-- 本月  -->
 							<block wx:else>
-                                <!-- selected -->
-                                <view class="today" style="background: {{day.selectedColor}}"> 
-                                     <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-								    <text class="calendar-lunar-lunar" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
-                                </view>
+								<!-- selected -->
+								<view class="today" style="background: {{day.selectedColor}}">
+									<text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+									<text class="calendar-lunar-lunar" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+								</view>
 
 								<text class="calendar-lunar-other" style="color:{{day.otherColor}};">{{day.other}}</text>
 

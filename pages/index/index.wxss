@@ -14,10 +14,47 @@
 
 .cell .title {
     flex-grow: 1;
+ 
 }
 
 
 
 .calendar-style {
     margin-top: 100rpx;    
+}
+
+.actionView{
+
+     height:394rpx; 
+     background: #fff; 
+     width: 630rpx; 
+     box-sizing: border-box; 
+     display: flex;
+     position: fixed;
+     left: 60rpx;
+     box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.1);
+     border-radius: 12px;
+     animation:mymove 0.3s;
+     align-items: center;
+     justify-content: center;
+}
+@keyframes mymove
+ {
+ from {opacity: 0;}
+ to {opacity: 1;}
+}
+.button{
+
+    width: 50px;
+    height: 60px;
+    background:rgba(242, 244, 247, 0.8);    
+    border-radius: 6px;
+    animation:mymove 0.3s;
+    display: flex;
+    position: fixed;
+    box-sizing: border-box; 
+    align-items: center;
+    justify-content: center;
+
+
 }

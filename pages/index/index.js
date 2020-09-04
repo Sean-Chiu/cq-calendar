@@ -1,3 +1,6 @@
+
+const App = getApp();
+
 Page({
 
     data: {
@@ -16,11 +19,21 @@ Page({
         title_index: 0,
         style: [],
         activeType: '', // 日期背景效果
-        days_addon: []
+        days_addon: [],
+        showAction:false,
+        navH:0,
+        windowHeight:0,
+        top:0,
+        bottom:0,
+        showViewStyle:'',
+        buttonStyle:'',
     },
 
     onLoad: function () {
-
+        //顶部高度
+        this.setData({
+            windowHeight:App.globalData.windowHeight
+        })
         //样式
         this.setData({
             style: [
@@ -47,7 +60,10 @@ Page({
         //     title: '点击下个月事件',
         //     content: '当前年份：' + currentYear + '年\n当前月份：' + currentMonth + '月\n之前年份：' + prevYear + '年\n之前月份：' + prevMonth + '月'
         // });
+        this.setData({
+            showAction:false,
 
+        })
 
     },
 
@@ -64,7 +80,10 @@ Page({
         //     title: '点击上个月事件',
         //     content: '当前年份：' + currentYear + '年\n当前月份：' + currentMonth + '月\n之前年份：' + prevYear + '年\n之前月份：' + prevMonth + '月'
         // });
+        this.setData({
+            showAction:false,
 
+        })
 
     },
 
@@ -82,6 +101,11 @@ Page({
         //     title: '日期选择器事件',
         //     content: '当前年份：' + currentYear + '年\n当前月份：' + currentMonth + '月\n之前年份：' + prevYear + '年\n之前月份：' + prevMonth + '月'
         // });
+        this.setData({
+            showAction:false,
+
+        })
+
 
     },
 
@@ -93,11 +117,39 @@ Page({
         const lunarMonth = event.detail.lunarMonth;
         const lunarDay = event.detail.lunarDay;
         const background = event.detail.background;
+        let   offsetLeft = event.detail.offsetLeft;
+        let   offsetTop = event.detail.offsetTop;
 
-        // wx.showModal({
-        //     title: '日期点击事件',
-        //     content: '点击的日期为：' + year + '年' + month + '月' + day + '日\n农历：' + lunarMonth + lunarDay
-        // });
+  
+        let topTemp = offsetTop+60+15;
+        let bottomTemp = this.data.windowHeight/2-offsetTop+15;
+        // console.log(topTemp)
+        // console.log(this.data.windowHeight/4)
+
+        if(topTemp>this.data.windowHeight/4){
+            this.setData({
+                showAction:true,
+                showViewStyle:'bottom:'+bottomTemp+'px',
+            })
+        }else{
+            this.setData({
+                showAction:true,
+                showViewStyle:'top:'+topTemp+'px',
+            })
+        }
+
+        this.setData({
+            buttonStyle:'left:'+offsetLeft+'px;'+'top:'+offsetTop+'px' 
+        });
+
+        // console.log(this.data.buttonStyle)
+
+    },
+
+    closeAction: function(){
+        this.setData({
+          showAction:false
+        })
     }
 
 })

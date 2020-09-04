@@ -27,10 +27,10 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
-	"compileType": "plugin",
+	"compileType": "miniprogram",
 	"libVersion": "2.12.2",
 	"appid": "wxf304827ca2830835",
 	"projectname": "canlender",
