@@ -526,7 +526,7 @@ Component({
                     const last_month_day = new Date(year, month - 1, 0).getDate();
                     for (let i = 0; i <= index; i++) {
                         days[i].day = last_month_day - index + i;
-                        days[i].date = `${days[index+i-1].date}-${days[i].day<10?`0${days[i].day}`:days[i].day}`
+                        days[i].date = `${days[i].date}-${days[i].day<10?`0${days[i].day}`:days[i].day}`
                         // console.log(days[i].date);
                     }
                 }                
